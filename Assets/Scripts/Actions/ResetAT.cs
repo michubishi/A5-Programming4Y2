@@ -1,27 +1,32 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
+using System;
 using UnityEngine;
 
 
 namespace NodeCanvas.Tasks.Actions {
 
-	public class MoveGreenAT : ActionTask {
+	public class ResetAT : ActionTask {
 
         public BBParameter<GameObject> cube;
-        public BBParameter<Vector3> greenLocation;
+        public Vector3 resetScale;
+        public Material material;
+        public Color greenColor;
+
         protected override string OnInit() {
 			return null;
 		}
 
 		
 		protected override void OnExecute() {
-
+			resetScale = new Vector3(1, 1, 1);
 		}
 
 		protected override void OnUpdate() {
-            cube.value.transform.position = Vector3.MoveTowards(cube.value.transform.position, greenLocation.value, Time.deltaTime * 2f);
+            material.color = greenColor;
+            cube.value.transform.localScale += resetScale * Time.deltaTime;
 
-            if (cube.value.transform.position == greenLocation.value)
+            if (cube.value.transform.localScale.x >= 1)
             {
                 EndAction(true);
             }
