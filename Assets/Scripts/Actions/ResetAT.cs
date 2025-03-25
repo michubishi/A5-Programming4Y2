@@ -9,7 +9,7 @@ namespace NodeCanvas.Tasks.Actions {
 	public class ResetAT : ActionTask {
         /*
         * Author: Michelle Vuong
-        * Description: Blob changes resets scale back to normal. 
+        * Description: Resets scale back to normal. 
         */
 
         public BBParameter<GameObject> blob;
