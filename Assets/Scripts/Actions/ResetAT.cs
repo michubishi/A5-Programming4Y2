@@ -7,8 +7,12 @@ using UnityEngine;
 namespace NodeCanvas.Tasks.Actions {
 
 	public class ResetAT : ActionTask {
+        /*
+        * Author: Michelle Vuong
+        * Description: Blob changes resets scale back to normal. 
+        */
 
-        public BBParameter<GameObject> cube;
+        public BBParameter<GameObject> blob;
         public Vector3 resetScale;
         public Material material;
         public Color greenColor;
@@ -24,9 +28,9 @@ namespace NodeCanvas.Tasks.Actions {
 
 		protected override void OnUpdate() {
             material.color = greenColor;
-            cube.value.transform.localScale += resetScale * Time.deltaTime;
+            blob.value.transform.localScale += resetScale * Time.deltaTime;
 
-            if (cube.value.transform.localScale.x >= 1)
+            if (blob.value.transform.localScale.x >= 1)
             {
                 EndAction(true);
             }

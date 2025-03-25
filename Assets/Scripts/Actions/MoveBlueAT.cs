@@ -5,8 +5,11 @@ using UnityEngine;
 namespace NodeCanvas.Tasks.Actions {
 
 	public class MoveBlueAT : ActionTask {
-
-		public BBParameter<GameObject> cube;
+        /*
+        * Author: Michelle Vuong
+        * Description: Moves the blob to the blue paint area.
+        */
+        public BBParameter<GameObject> blob;
 		public BBParameter<Vector3> blueLocation;
 		
 
@@ -15,9 +18,9 @@ namespace NodeCanvas.Tasks.Actions {
 		}
 
 		protected override void OnUpdate() {
-			cube.value.transform.position = Vector3.MoveTowards(cube.value.transform.position, blueLocation.value, Time.deltaTime * 2f);
+            blob.value.transform.position = Vector3.MoveTowards(blob.value.transform.position, blueLocation.value, Time.deltaTime * 2f);
 
-			if (cube.value.transform.position == blueLocation.value) 
+			if (blob.value.transform.position == blueLocation.value) 
 			{
                 EndAction(true);
             }

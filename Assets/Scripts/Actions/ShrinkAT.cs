@@ -7,8 +7,13 @@ using UnityEngine.UIElements;
 namespace NodeCanvas.Tasks.Actions {
 
 	public class ShrinkAT : ActionTask {
-        public BBParameter<GameObject> cube;
-        public BBParameter<Vector3> pinkLocation;
+
+        /*
+         * Author: Michelle Vuong
+         * Description: Blob changes colour and scales up by a fixed amount. 
+         */
+
+        public BBParameter<GameObject> blob;
         public Vector3 shrink;
         public Material material;
         public Color pinkColor;
@@ -24,9 +29,9 @@ namespace NodeCanvas.Tasks.Actions {
 
 		protected override void OnUpdate() {
             material.color = pinkColor;
-            cube.value.transform.localScale -= shrink * Time.deltaTime;
+            blob.value.transform.localScale -= shrink * Time.deltaTime;
 
-            if (cube.value.transform.localScale.x <= 0.5)
+            if (blob.value.transform.localScale.x <= 0.5)
             {
                 EndAction(true);
             }

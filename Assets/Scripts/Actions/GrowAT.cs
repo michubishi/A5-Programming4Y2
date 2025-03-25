@@ -5,7 +5,13 @@ using UnityEngine;
 namespace NodeCanvas.Tasks.Actions {
 
     public class GrowAT : ActionTask {
-        public BBParameter<GameObject> cube;
+
+        /*
+         * Author: Michelle Vuong
+         * Description: Blob changes colour and scales up by a fixed amount. 
+         */
+
+        public BBParameter<GameObject> blob;
         public BBParameter<Vector3> blueLocation;
         public Vector3 scale;
         public Material material;
@@ -21,9 +27,9 @@ namespace NodeCanvas.Tasks.Actions {
 
         protected override void OnUpdate() {
             material.color = blueColor;
-            cube.value.transform.localScale += scale * Time.deltaTime;
+            blob.value.transform.localScale += scale * Time.deltaTime;
 
-            if (cube.value.transform.localScale.x >= 3)
+            if (blob.value.transform.localScale.x >= 3)
             {
                 EndAction(true);
             }
