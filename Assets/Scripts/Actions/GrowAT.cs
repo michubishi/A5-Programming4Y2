@@ -26,12 +26,12 @@ namespace NodeCanvas.Tasks.Actions {
         }
 
         protected override void OnUpdate() {
-            material.color = blueColor;
-            blob.value.transform.localScale += scale * Time.deltaTime;
+            material.color = blueColor; //change colour to blue
+            blob.value.transform.localScale += scale * Time.deltaTime; //Scale up blob overtime
 
-            if (blob.value.transform.localScale.x >= 3)
+            if (blob.value.transform.localScale.x >= 3) //once the scale has reached to 3 
             {
-                EndAction(true);
+                EndAction(true);   //end the action task
             }
         }
 

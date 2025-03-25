@@ -18,17 +18,13 @@ namespace NodeCanvas.Tasks.Actions {
 			return null;
 		}
 
-		protected override void OnExecute() {
-			
-		}
-
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
-            blob.value.transform.position = Vector3.MoveTowards(blob.value.transform.position, pinkLocation.value, Time.deltaTime * 2f);
+            blob.value.transform.position = Vector3.MoveTowards(blob.value.transform.position, pinkLocation.value, Time.deltaTime * 2f); //move blob to the center of the pink paint
 
-			if (blob.value.transform.position == pinkLocation.value)
+			if (blob.value.transform.position == pinkLocation.value) //when the blob reaches the center of the pink paint
 			{
-                EndAction(true);
+                EndAction(true);  //end the action task
             }
         }
 

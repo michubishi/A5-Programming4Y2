@@ -28,12 +28,12 @@ namespace NodeCanvas.Tasks.Actions {
 		}
 
 		protected override void OnUpdate() {
-            material.color = pinkColor;
-            blob.value.transform.localScale -= shrink * Time.deltaTime;
+            material.color = pinkColor; //change blob to a pink colour
+            blob.value.transform.localScale -= shrink * Time.deltaTime; //shrink blob
 
-            if (blob.value.transform.localScale.x <= 0.5)
+            if (blob.value.transform.localScale.x <= 0.5) //once blob is small enough
             {
-                EndAction(true);
+                EndAction(true); //end the action task
             }
         }
 

@@ -18,11 +18,11 @@ namespace NodeCanvas.Tasks.Actions {
 		}
 
 		protected override void OnUpdate() {
-            blob.value.transform.position = Vector3.MoveTowards(blob.value.transform.position, blueLocation.value, Time.deltaTime * 2f);
+            blob.value.transform.position = Vector3.MoveTowards(blob.value.transform.position, blueLocation.value, Time.deltaTime * 2f); //move to the center of the blue paint
 
-			if (blob.value.transform.position == blueLocation.value) 
+			if (blob.value.transform.position == blueLocation.value) //once blob has reached it's location
 			{
-                EndAction(true);
+                EndAction(true);   //end the action task
             }
 
         }
