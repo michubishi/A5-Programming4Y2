@@ -10,7 +10,7 @@ namespace NodeCanvas.Tasks.Actions {
 
         /*
          * Author: Michelle Vuong
-         * Description: Blob changes colour and scales up by a fixed amount. 
+         * Description: Blob changes colour and shrinks by a fixed amount. 
          */
 
         public BBParameter<GameObject> blob;
